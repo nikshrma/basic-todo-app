@@ -1,0 +1,16 @@
+{
+  "name": "basic-todo",
+  "version": "1.0.0",
+  "description": "A basic full stack application to check current knowledge",
+  "license": "ISC",
+  "author": "nikhil sharma",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "zod": "^4.1.8"
+  }
+}
