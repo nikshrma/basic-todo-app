@@ -1,6 +1,6 @@
 const express = require("express");
 const z = require("zod");
-const { createTodo } = require("./types");
+const { createTodo, updateTodo } = require("./types");
 
 const app = express();
 app.use(express.json());
@@ -19,5 +19,13 @@ app.get("/todos", (req, res) => {
 
 });
 app.put("/completed", (req, res) => {
-
+    const updatePayload = req.body;
+    const parsedPayload = updateTodo.safeParse(updatePayload);
+    if (!parsedPayload.success) {
+    res.status(411).json({
+      msg: "Invalid inputs. Please try again.",
+    });
+    return;
+  }
+  //if fine then update in mongoDB
 });
