@@ -1,7 +1,8 @@
 const express = require("express");
 const z = require("zod");
 const { createTodo, updateTodo } = require("./types");
-
+const dotenv = require("dotenv");
+dotenv.config();
 
 const app = express();
 app.use(express.json());
