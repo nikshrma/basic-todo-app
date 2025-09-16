@@ -58,3 +58,4 @@ app.put("/completed", async(req, res) => {
     updatedTodo
   })
 });
+app.listen(3000);
