@@ -3,9 +3,12 @@ const z = require("zod");
 const { createTodo, updateTodo } = require("./types");
 const mongoose = require("mongoose");
 const { Todo } = require("./db");
-
+const cors = require("cors");
 const app = express();
 app.use(express.json());
+app.use(cors({
+  origin:"http://localhost:5173"
+}));
 app.post("/todos", async(req, res) => {
   const todo = req.body;
   const result = createTodo.safeParse(todo);
